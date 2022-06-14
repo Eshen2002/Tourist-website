@@ -80,6 +80,10 @@ nav a.active {
     padding: 0% 1% 0% 1%;
   }
   
+  #main-image-heritage{
+    width: 80%;
+    height: auto;
+  }
   
   a{
     text-decoration: none;
