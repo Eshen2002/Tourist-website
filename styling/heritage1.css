@@ -291,6 +291,23 @@ figcaption{
   100% { opacity: 0; }
  }
  
+
+ @media screen and (max-width:450px){
+    
+     
+  
+  nav a {
+   float:left;
+   color: #f2f2f2;
+   text-align: center;
+   padding: 1% 2%;
+   text-decoration: none;
+   font-size: 40%;
+ }
+
+ 
+}
+
   
 
 

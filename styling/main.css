@@ -283,9 +283,7 @@ hr{
   margin-top: 1%;
 }
 
-#backgrounnd-table{
-  background-color: white;
-}
+
 
 /*                                                                                        BEACHES PAGE                                                                      */
 
@@ -405,6 +403,11 @@ figure{
 
 /* Styling the wildlife table */ 
 
+#backgrounnd-table{
+  background-color: white;
+
+
+}
 .table-wildlife{
   border-collapse: collapse;
   text-align: center;
@@ -446,6 +449,7 @@ figure{
 
 #flexbox-wildlife-container{
   display: flex;
+  
 }
 
 .flexbox-wildlife-item{
@@ -656,7 +660,7 @@ div.desc {
 @media only screen and (max-width: 700px) {
   .responsive {
     width: 49.99999%;
-    margin: 6px 0;
+    
   }
 }
 
@@ -666,18 +670,63 @@ div.desc {
   }
 }
 
-@media screen and (max-width:740px){
+@media screen and (max-width:900px){
   #flexbox-wildlife-container{
-    flex-direction: column;}
+    flex-direction: column;
+   
+    
+  }
 
     .table-wildlife,.wildlife-section,.flexbox-wildlife-item,.footer-container{
       font-size: 16px;
     }
 
-    .footer-container{
-      font-size :12px;
+    
+
+    .top-left {
+      
+      font-size: 25px;
+  
+    }
+
+    .home-section h1{
+      
+      font-size: 40px;
+      
+    }
+
+    .wildlife-section h1{
+      font-size: 30px;
+    }
+
+    .home-section p,ul,ol,.home-section figcaption{
+      
+      font-size: 12px;
+      
+    }
+  
+    .home-section h2{
+        
+      font-size: 22px;
+      
+    }
+
+    .footer-item h1{
+      font-size: 19px;
+    }
+
+    .footer-item p {
+      font-size: 16px;
     }
   }
+
+  
+
+ 
+
+  
+
+
 
   @media screen and (max-width:450px){
     
@@ -698,8 +747,10 @@ div.desc {
    }
    .flexbox-item{
     
-     font-size: 80%;
+     font-size: 90%;
    }
+
+   
 }
 
 /* On screens that are 992px wide or less, go from four columns to two columns */
