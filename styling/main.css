@@ -1,3 +1,4 @@
+/* Common to all webpages */
 *{
     margin: 0;
     font-family:'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
@@ -5,7 +6,7 @@
   }
 
 
-/*                                                               NAVIGATION BAR(Common to all webpages)                                                                                                     */
+/*                                --------                               NAVIGATION BAR(Common to all webpages)             ---------                                                                                        */
 
  nav{
   overflow: hidden;
@@ -35,7 +36,7 @@ nav a.active {
 
  
    
-/*                                                              FOOTER SECTION                                         */
+/*                              ----------                                FOOTER SECTION                 -----------                        */
 
 .footer-container{
   display: flex;
@@ -46,7 +47,7 @@ nav a.active {
 
 .footer-item{
   height: auto;
-  width: 400px;
+  width: 33%;
 }
 
 .footer-container p{
@@ -75,16 +76,13 @@ nav a.active {
   font-family:'brush script',cursive;
 }
 
-    /* The animation for the main image in home screen and text on the image */
-  @keyframes fadeInAnimation {
-    0% {
-        opacity: 0;
-    }
-    100% {
-        opacity: 1;
-    }
-}
+  
 
+
+/*                                       ----------------                   Home Page                  -------------------                                                                                                 */
+ 
+
+/* Main image of home page */
 #home-img{
   width: 100%;
   height: auto;
@@ -113,11 +111,19 @@ nav a.active {
     color: white;
   }
 
-/*                                                          Home Page                                                                                                                   */
- 
+  /* The animation for the main image in home screen and text on the image */
+    @keyframes fadeInAnimation {
+      0% {
+          opacity: 0;
+      }
+      100% {
+          opacity: 1;
+      }
+  }
+  
 /* The sections in Home page and it's content */
 #background-home{
-  background-image: linear-gradient(to bottom, rgba(223, 150, 65, 0.925),rgb(179, 214, 35));
+  background-color: white;
   background-attachment: fixed;
 
 }
@@ -133,6 +139,7 @@ nav a.active {
   border: 2px black solid;
   border-radius: 8px;
   width: 80%;
+  box-shadow:8px 8px 8px 8px rgb(155, 152, 152);
 }
 
 .home-section h1{
@@ -185,7 +192,7 @@ figcaption{
   text-align: center;
 }
 
-/*                                                                ACTIVITIES PAGE                                                                                                */
+/*                                                   -------             ACTIVITIES PAGE                ----------                                                                                */
 
 /* Background images of activities */
 
@@ -219,6 +226,10 @@ figcaption{
   transition: all 1s ease;
   background-color: #302e2e;
   color: azure;
+}
+
+.flexbox-item h3{
+  text-align: center;
 }
 
 .flexbox-item p{ 
@@ -283,9 +294,12 @@ hr{
   margin-top: 1%;
 }
 
+.flexbox-container a{
+  text-decoration: none;
+}
 
 
-/*                                                                                        BEACHES PAGE                                                                      */
+/*                                                                            ------ ---           BEACHES PAGE    --- --------                                                                 */
 
 /* Beaches page background image */
 
@@ -360,7 +374,7 @@ figure{
 }
 
 
-/*                                                                                     Wild Life Page                                                                                  */
+/*                                                               --------------                      Wild Life Page    -----------------                                                                              */
 
 /* background images for wildlife page */
 
@@ -505,15 +519,7 @@ div.desc {
   
 }
 
-/*                                                                                                  Clearfix (clear floats)                                                               */
-
-.roww::after
- {
-  content: "";
-  clear: both;
-  display: table;
-  box-sizing: border-box;  
-}
+/* To make iframe responsive */
 
 .container
  {
@@ -535,7 +541,7 @@ div.desc {
   border: 2px solid black;
 }
 
-/*                                                                         Purchases and Donate                                                                                */
+/*                                               -------------------                          Purchases and Donate          --------------------                                                                      */
 
 /* Background image for the flexbox container used to display products */
 #background-donate{
@@ -654,7 +660,7 @@ div.desc {
   margin: 2% auto 2% auto;
 }
 
-/*                                                                         Mobile view         */
+/*                                       -------------------------         Mobile view    ---------------------------------     */
 
 
 @media only screen and (max-width: 700px) {
@@ -720,13 +726,6 @@ div.desc {
     }
   }
 
-  
-
- 
-
-  
-
-
 
   @media screen and (max-width:450px){
     
@@ -760,7 +759,7 @@ div.desc {
   }
 }
 
-/* On screens that are 600px wide or less, make the columns stack on top of each other instead of next to each other */
+/* On screens that are 600px wide or less */
 @media screen and (max-width: 600px) {
   .row {
     flex-direction: column;
