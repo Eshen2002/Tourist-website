@@ -56,6 +56,7 @@
 }
 
 .footer-item{ 
+  flex: 25%;
   height: auto;
   width: 400px;
 }
@@ -77,6 +78,10 @@
 .footer-container p:hover{
   cursor: pointer;
   color: white;
+}
+
+.footer-container img{
+  border: none;
 }
 
 
@@ -325,6 +330,19 @@ figcaption{
   img{width: 80%;}
 
  }
+
+ @media screen and (max-width: 600px) {
+ 
+
+  .footer-container{
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .footer-container img{
+    width: 60%
+  };
+}
 
 
   
