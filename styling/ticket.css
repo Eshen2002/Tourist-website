@@ -1,0 +1,176 @@
+body{
+    background:    url("../images/Activities-in-SL--scaled.webp")  ;
+    font-family: 'Poppins', sans-serif;
+    background-blend-mode: darken;
+    font-size: 20px;
+    background-repeat: no-repeat;  
+    animation-duration: 4s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes change{
+    0%{
+        background:    url("../images/Activities-in-SL--scaled.webp") ;
+        background-blend-mode: darken;
+        
+
+
+    }
+
+    100%{
+        background: url("../images/Activities-in-SL--scaled.webp")  rgba(0,0,0,0.6) ;
+        background-blend-mode: darken;
+        
+
+    }
+}
+
+
+
+.ticket-container{
+    width: fit-content;
+    background-color: white;
+    border: 2px solid black;
+    box-shadow: 2px 2px lightslategray;
+    border-radius: 8px;
+    padding: 1%;
+    position: relative;
+    margin: auto;
+    margin-top: 9vh;
+    opacity: 0.97;
+    
+    
+}
+
+h2{
+    text-align: center;
+}
+
+select,input[type="number"]{
+    font-size: 20px;
+    font-family: 'Poppins', sans-serif;
+    border-radius: 8px;
+}
+
+#price-display{
+    width: 60px;
+    border-radius: 8px;
+    font-size: 20px;
+    font-family: 'Poppins', sans-serif;
+}
+
+option:hover{
+    background-color: grey;
+}
+
+.button-container{
+    text-align: center;
+}
+
+button{
+    background-color: white;
+    font-family: 'Poppins', sans-serif;
+    color: darkgreen;
+    border-radius: 8px;
+    font-size: 22px;
+    border: #4CAF50 2px solid;
+    font-weight: bolder;
+    cursor: pointer;
+}
+
+button:hover{
+    background-color: darkgreen;
+    color: white;
+    transition: all 0.5s ease;
+    
+}
+
+#myTable{
+    border: 1px solid black;
+    margin: auto;
+    width: 70%;
+    text-align: center;
+  }
+
+#no-order{
+    color: black;
+    background-color: lightgrey;
+    visibility: visible;
+}
+
+td{
+    background-color: lightgrey;
+}
+
+#myTableTotal{
+    margin: auto;
+    width: 70%;
+    text-align: center;
+    background-color: white;
+    border: 1px solid black;
+    display: none;
+  }
+
+#place-order{
+    display: none;
+    margin: auto;
+}
+
+.bill-box{
+    border: solid 1px black;
+    width: 300px;
+    height: fit-content;
+    left: 40%;
+    text-align: center;
+    position: fixed;
+    top: 40vh;
+    padding: 1%;
+    background-color: white;
+    display:block;
+    animation-name:example ;
+    animation-duration: 2s;
+    box-shadow: 2px 2px black;
+    
+}
+
+#okbtn{
+    display: none;
+    margin: auto;
+}
+
+@keyframes example{
+    0%{
+        opacity: 0;
+        transform: translateY(-1000px);
+    }
+
+    100%{
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+#current-table th{
+    border: 0.1px solid black;
+}
+
+#current-table{
+    width: 100%;
+    font-size: 18px;
+    text-align: center;
+}
+
+#add-ord-fav{
+    border: 1px solid darkgreen;
+    width: fit-content;
+    margin: auto;
+    display: none;
+    padding: 1%;
+    text-align: center;
+}
+
+.scroll{
+    overflow-y: scroll;
+    max-height: 200px;
+}
+

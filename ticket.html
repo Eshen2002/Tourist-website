@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styling/ticket.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    
+    <title>Document</title>
+</head>
+<body>
+    <div class="ticket-container">
+        <h2>Ticket Booking</h2>
+        <p>You can book your Tickets here (<b>Children below 3 do not require a ticket</b>).</p>
+        <form action="" method="post" id="ticket-form">
+
+
+            <label for="ticket-choice">Enter the type of ticket :</label>
+            <select name="ticket-choice" id="ticket-choice" required>
+                <option value="" selected>-Please select a Ticket-</option>
+                <option value="5000"  >Foreign Adult Pass</option>
+                <option value="2500">Foreign Child Pass</option>
+                <option value="1000">Local Adult Pass</option>
+                <option value="500" >Local Adult Pass</option>
+                <option value="15000">Annual Pass(Foreign)</option>
+                <option value="4500">Annual Pass(Local)</option>
+            </select>
+
+
+            <br><br>
+
+            <label for="no-of-tickets">Enter number of tickets :</label>
+            <input type="number" name="no-of-tickets" id="no-of-tickets" min="1" max="1000" required><br><br>
+
+
+            <label for="duration">Enter the Duration :</label>
+            <select name="duration" id="duration" disabled >
+                <option value="3">3 Hours</option>
+                <option value="12">Half a day</option>
+                <option value="24">Full Day</option>
+                <option value="48">2 Days</option>
+            </select><br><br>
+
+
+            <label for="food-token">No of Food Tokens :</label> 
+            <input type="number" name="food-token" id="food-token" value="0" min="0"  placeholder="500 LKR per head" disabled><br> <br>
+            
+            
+           
+            <div class="button-container">
+                <button type="submit">Add to order</button>
+                
+            </div>
+
+            <h2>Current Order</h2>
+            <div class="button-container">
+                <button id="addFav" ><i class="fa fa-heart-o" style="font-size:24px"></i>Add to Favourite</button>
+                <button id="ordFav" >Order Favourite</button>
+                </div>
+                <br>
+
+                <div id="add-ord-fav">
+                    <p id="fav-resp"></p>
+                    <div class="button-container"><button id="favok">OK</button></div>
+                    <br>
+                    
+                </div>
+                <br>
+                
+
+
+            <table id="current-table">
+                <tr><th>Ticket Price<br>(Per head)</th> <th>Number of <br> tickets</th><th>Extra Duration Price <br> (Per head)</th> <th>Number of Food tokens<br> (500 Per head)</th><th>Current Order <br> cost</th></tr>
+                <tr>  <td id="display-tprice" >-</td>   <td id="display-nticket" >-</td>    <td id="display-dprice">-</td>   <td id="display-eprice">-</td> <td id="display-cost">-</td>   </tr>
+            </table>
+
+            <h2>Overall Order</h2>
+
+            <div class="scroll">
+                <table id="myTable">
+                    <tr><th>Current Order</th><th>Order Cost</th></tr>
+                    
+                    <tr id="no-order"><td colspan="2" rowspan="2">No orders <br> has been placed <br> currently</td></tr>
+                    
+                    
+                </table>
+            </div>
+
+            <div class="scroll">
+                <table id="myTableTotal">
+                    <tr><th id="total-display"></th><th id="total-bill"></th></tr>
+                    
+                </table>
+            </div>
+            <br>
+
+            
+            <div class="button-container">
+                <button type="submit" id="place-order">Place order</button><br>
+                <button id="chk-loyalty"><i class="fa fa-vcard-o" style="font-size:24px"></i> Check Loyalty</button>
+                
+                
+            </div>
+
+
+            <div id="bill-box" >
+                <div id="message-bill"></div><br>
+                <div class="button-container">
+                    <button type="submit" id="okbtn">OK</button> 
+                </div>
+            </div>
+
+
+            
+
+
+            
+            
+        </form>
+
+        
+
+        
+
+
+        
+    </div>
+    
+    
+</body>
+<script src="scripts/ticket.js"></script>
+</html>
