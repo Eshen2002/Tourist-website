@@ -118,9 +118,9 @@ td{
 
 .bill-box{
     border: solid 1px black;
-    width: 300px;
+    width: fit-content;
     height: fit-content;
-    left: 40%;
+    left: 35vw;
     text-align: center;
     position: fixed;
     top: 40vh;
@@ -172,5 +172,14 @@ td{
 .scroll{
     overflow-y: scroll;
     max-height: 200px;
+}
+
+a{
+    text-decoration: none;
+    color: green;
+}
+
+a:hover{
+    color: white;
 }
 

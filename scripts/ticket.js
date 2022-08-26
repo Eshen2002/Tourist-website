@@ -51,45 +51,37 @@ window.addEventListener("load",function(){
 // Displays the instantaneous changes of the current order when the type of ticket choice is changed
 
 tChoices.addEventListener("change",function(){
-    tPrice = parseInt(tChoices.options[tChoices.selectedIndex].value);
-    totalPeople = parseInt(headCount.value)
-    durationPrice=durationPriceget();
-    durationList.options.selectedIndex=0;
-    totfooodtokens = parseInt(extraOpt.value);
+    getVariables();
     disableFields()
     nullvalidation()
 
-    sumCurrent = currentSum(tPrice,totalPeople,totfooodtokens,durationPrice)
+    sumCurrent = currentSum()
 
     document.getElementById("display-cost").innerHTML = `${sumCurrent}`
+
+    durationList.options.selectedIndex=0;
        
 })
 
 // Displays the instantaneous changes of the current order when number of tickets is changed or typed
 
 headCount.addEventListener("input",function(){
-    totfooodtokens = parseInt(extraOpt.value);
-    tPrice = parseInt(tChoices.options[tChoices.selectedIndex].value);
-    totalPeople = parseInt(headCount.value);
-    durationPrice = durationPriceget();
+    getVariables();
 
    nullvalidation()
 
-    sumCurrent = currentSum(tPrice,totalPeople,totfooodtokens,durationPrice)  
+    sumCurrent = currentSum()  
     
 })
 
 // Displays the instantaneous changes of the current order when duration drop downlist is changed
 
 durationList.addEventListener("change",function(){
-    tPrice = parseInt(tChoices.options[tChoices.selectedIndex].value);
-    totalPeople = parseInt(headCount.value)
-    durationPrice = durationPriceget();
-    totfooodtokens = parseInt(extraOpt.value);
+    getVariables();
 
     nullvalidation()
 
-    sumCurrent = currentSum(tPrice,totalPeople,durationPrice,totfooodtokens)
+    sumCurrent = currentSum()
 
 })
 
@@ -98,15 +90,11 @@ durationList.addEventListener("change",function(){
 extraOpt.addEventListener("input",function(){
     
     
-    tPrice = parseInt(tChoices.options[tChoices.selectedIndex].value);
-    totalPeople = parseInt(headCount.value)
-    durationPrice = durationPriceget();
-    
-    totfooodtokens = parseInt(extraOpt.value);
+    getVariables();
 
     nullvalidation()
     
-    sumCurrent = currentSum(tPrice,totalPeople,durationPrice,totfooodtokens) 
+    sumCurrent = currentSum() 
 })
 
 // Displays the number of ticket typeof,number of food totfooodtokens,extra duration and all ticket details to the user and the cost of the current order is added to the overall order
@@ -114,13 +102,10 @@ tform.addEventListener("submit",function(event){
 
     placeOrderbtn.style.display="block"
     document.getElementById("no-order").style.display="none"
-    event.preventDefault();
-    totfooodtokens = parseInt(extraOpt.value)
-    totalPeople = parseInt(headCount.value)
-    durationPrice = durationPriceget();
+    getVariables();
     durationText = durationList.options[durationList.selectedIndex].text;
     ticketDes = tChoices.options[tChoices.selectedIndex].text;
-    sumCurrent = currentSum(tPrice,totalPeople,totfooodtokens,durationPrice)
+    sumCurrent = currentSum()
     totalCost = sumCurrent + totalCost
     overallHead = overallHead + totalPeople
 
@@ -181,17 +166,14 @@ okbtn.addEventListener("click",function(){
 // THe add to favourite button which saves the users current order in the local storage
 addFav.addEventListener("click",function(event){
     event.preventDefault();
-    tPrice = parseInt(tChoices.options[tChoices.selectedIndex].value);
-    totalPeople = parseInt(headCount.value)
-    durationPrice = durationPriceget();
-    totfooodtokens = parseInt(extraOpt.value)
-    sumCurrent = currentSum(tPrice,totalPeople,totfooodtokens,durationPrice)
+    
+    sumCurrent = currentSum()
     durationText = durationList.options[durationList.selectedIndex].text;
     ticketDes = tChoices.options[tChoices.selectedIndex].text;
 
     
     // this avoids user saving undefined and invalid orders
-    if (isNaN(sumCurrent)){
+    if (isNaN(sumCurrent) || sumCurrent==0){
         document.getElementById("add-ord-fav").style.display="block";
     document.getElementById("fav-resp").innerHTML=`Please add a <b>valid order</b>`
 
@@ -206,6 +188,19 @@ addFav.addEventListener("click",function(event){
 
     
 })
+
+
+
+// retrieves all values from the user
+function getVariables(){
+    tPrice = parseInt(tChoices.options[tChoices.selectedIndex].value);
+    totalPeople = parseInt(headCount.value)
+    durationPrice = durationPriceget();
+    totfooodtokens = parseInt(extraOpt.value)
+
+}
+
+
 
 // the order favourite button which adds the users favourite order to the overall order
 ordFav.addEventListener("click",function(event){
@@ -272,6 +267,8 @@ loyalBtn.addEventListener("click",function(event){
     document.getElementById("fav-resp").innerHTML=`<b>${getLoyalPoints} Loyalty points<b><br> has been awarded to you`
 
 })
+
+
 
 // Disabling fields according to selected ticket
 function disableFields(){

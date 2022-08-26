@@ -161,10 +161,10 @@
                     
                     <form action="" method="get" id="formb"  >
                         <label for="firstname">Name:</label>
-                        <input type="text" name="firstname" id="firstname" required><br>
+                        <input type="text" name="firstname" id="firstname" required placeholder="John MacArthur"><br>
                         
                 
-                        <label for="card-choice">Select payment option:</label><br>
+                        <label for="card-choice">Select payment option:</label><br> 
 
 
                         <input type="radio" required name="card-choice" id="amex" value=""> 
@@ -179,7 +179,7 @@
                 
                 
                 
-                        <label for="dnt-amount">Enter donate amount:</label>
+                        <label for="dnt-amount">Enter donate amount:</label> 
                         <select name="dnt-amount" id="dnt-amount" required >
                             <option value="100">Rs.100</option>
                             <option value="250">Rs.250</option>
@@ -191,10 +191,10 @@
                         </select><br><br>
                 
                         <label for="pin">Enter CVC:</label>
-                        <input  type="password" name="pin" id="pin" pattern="[0-9]{3}" title="Enter the 3 pin code " required><br>
+                        <input  type="password" name="pin" id="pin" pattern="[0-9]{3}" title="Enter the 3 pin code " placeholder="456" required><br>
 
                         <label for="card-no">Enter card number</label>
-                        <input type="number" name="card-no" id="card-no" required><br><br>
+                        <input type="text" name="card-no" id="card-no" required pattern="[0-9]{16}" title="Please enter the 16 length card number" placeholder="xxxx xxxx xxxx xxxx"><br><br>
                         
                         <button type="submit" id="sbt">Submit</button>
                         <button type="reset" id="rst">Reset</button>
